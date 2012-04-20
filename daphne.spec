@@ -19,7 +19,7 @@ Summary:      Multiple Arcade Laserdisc Emulator
 Source:       %name-%version-src.tar.bz2
 Source1:      %name-1.0beta-linux-data.tar.gz
 Patch:        daphne.dif
-BuildRequires: SDL-devel libogg-devel zlib-devel gcc-c++ SDL_mixer-devel libvorbis-devel glew-devel fdupes
+BuildRequires: SDL-devel libogg-devel zlib-devel gcc-c++ SDL_mixer-devel libvorbis-devel glew-devel fdupes mesaglu-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
