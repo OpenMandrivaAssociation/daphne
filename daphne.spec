@@ -11,10 +11,10 @@
 # norootforbuild
 
 Name:         daphne
-License:      COPYRIGHT
+License:      GPL
 Group:        Emulators
 Version:      1.0
-Release:      %mkrel 1
+Release:      %mkrel 1.1
 Summary:      Multiple Arcade Laserdisc Emulator
 Source:       %name-%version-src.tar.bz2
 Source1:      %name-1.0beta-linux-data.tar.gz
