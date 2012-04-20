@@ -33,9 +33,9 @@ Play the original versions of many laserdisc arcade game.
 cp Makefile.vars.linux_x86 Makefile.vars
 make %{?jobs:-j%jobs} \
 %ifarch %ix86
-I386FLAGS="-DNATIVE_CPU_X86 -DMMX_RGB2YUV" USE_MMX=1
+I386FLAGS="-DNATIVE_CPU_X86 -DMMX_RGB2YUV -lGL -lGLU" USE_MMX=1
 %else
-I386FLAGS=""
+I386FLAGS="-lGL -lGLU"
 %endif
 cd vldp2
 ./configure \
