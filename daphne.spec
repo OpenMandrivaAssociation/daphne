@@ -18,7 +18,8 @@ Release:      %mkrel 1
 Summary:      Multiple Arcade Laserdisc Emulator
 Source:       %name-%version-src.tar.bz2
 Source1:      %name-1.0beta-linux-data.tar.gz
-Patch:        daphne.dif
+Patch0:	daphne.dif
+Patch1:	daphne-gl.patch
 BuildRequires: SDL-devel libogg-devel zlib-devel gcc-c++ SDL_mixer-devel libvorbis-devel glew-devel fdupes mesaglu-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
@@ -27,7 +28,8 @@ Play the original versions of many laserdisc arcade game.
 
 %prep
 %setup -q -n src -a 1
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 %build
 cp Makefile.vars.linux_x86 Makefile.vars
