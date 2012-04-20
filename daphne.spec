@@ -65,8 +65,6 @@ exec ./daphne "\$@"
 EOT
 chmod 755 $RPM_BUILD_ROOT%{_gamesbindir}/%{name}
 
-%fdupes $RPM_BUILD_ROOT
-
 %files
 %defattr(-,root,root)
 %{_gamesbindir}/%{name}
