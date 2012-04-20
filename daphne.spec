@@ -12,11 +12,9 @@
 
 Name:         daphne
 License:      COPYRIGHT
-Group:        unsorted
-#Requires:     xforms
-Autoreqprov:  on
+Group:        Emulators
 Version:      1.0
-Release:      2.20
+Release:      %mkrel 1
 Summary:      Multiple Arcade Laserdisc Emulator
 Source:       %name-%version-src.tar.bz2
 Source1:      %name-1.0beta-linux-data.tar.gz
@@ -28,7 +26,7 @@ BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 Play the original versions of many laserdisc arcade game.
 
 %prep
-%setup -n src -a 1
+%setup -q -n src -a 1
 %patch -p1
 
 %build
@@ -53,22 +51,22 @@ make -f Makefile.linux DFLAGS="$RPM_OPT_FLAGS -fPIC"
 
 %install
 # install section
-install -D -m 755 ../daphne.bin $RPM_BUILD_ROOT/usr/lib/daphne/daphne
-install -m 755 ../libvldp2.so $RPM_BUILD_ROOT/usr/lib/daphne
+install -D -m 755 ../daphne.bin $RPM_BUILD_ROOT%{_libdir}/%{name}/%{name}
+install -m 755 ../libvldp2.so $RPM_BUILD_ROOT%{_libdir}/%{name}
 cd daphne
-cp -a pics roms sound $RPM_BUILD_ROOT/usr/lib/daphne
-mkdir -p $RPM_BUILD_ROOT/usr/games
-cat <<EOT >$RPM_BUILD_ROOT/usr/games/daphne
+cp -a pics roms sound $RPM_BUILD_ROOT%{_libdir}/%{name}
+mkdir -p $RPM_BUILD_ROOT%{_gamesbindir}
+cat <<EOT >$RPM_BUILD_ROOT%{_gamesbindir}/%{name}
 #!/bin/sh
-cd /usr/lib/daphne
+cd %{_libdir}/%{name}
 exec ./daphne "\$@"
 EOT
-chmod 755 $RPM_BUILD_ROOT/usr/games/daphne
+chmod 755 $RPM_BUILD_ROOT%{_gamesbindir}/%{name}
 
 %fdupes $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-/usr/games/daphne
-/usr/lib/daphne
+%{_gamesbindir}/%{name}
+%{_libdir}/%{name}
 
