@@ -1,0 +1,16 @@
+--- src/Makefile.vars.linux_x64~	2008-09-17 18:42:57.000000000 +0200
++++ src/Makefile.vars.linux_x64	2012-04-20 11:07:58.259786879 +0200
+@@ -23,4 +23,4 @@
+         -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DUSE_OPENGL 
+ 
+ # platform-specific lib flags 
+-LIBS = `sdl-config --libs` -ldl -lz -logg -lvorbis -lvorbisfile -lGLEW
++LIBS = `sdl-config --libs` -ldl -lz -logg -lvorbis -lvorbisfile -lGLEW -lGL -lGLU
+--- src/Makefile.vars.linux_x86~	2012-04-20 10:57:50.000000000 +0200
++++ src/Makefile.vars.linux_x86	2012-04-20 11:07:37.122285434 +0200
+@@ -24,4 +24,4 @@
+ 	-D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DUSE_OPENGL
+ 
+ # platform-specific lib flags
+-LIBS = `sdl-config --libs` -ldl -lz -logg -lvorbis -lvorbisfile -lGLEW
++LIBS = `sdl-config --libs` -ldl -lz -logg -lvorbis -lvorbisfile -lGLEW -lGL -lGLU
