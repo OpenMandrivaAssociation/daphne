@@ -70,3 +70,25 @@ chmod 755 $RPM_BUILD_ROOT%{_gamesbindir}/%{name}
 %{_gamesbindir}/%{name}
 %{_libdir}/%{name}
 
+
+
+%changelog
+* Fri Apr 20 2012 Zombie Ryushu <ryushu@mandriva.org> 1.0-1.1mdv2011.0
++ Revision: 792447
+- what is fdupes doing?
+- what is fdupes doing?
+
+* Fri Apr 20 2012 Zombie Ryushu <ryushu@mandriva.org> 1.0-1
++ Revision: 792424
+- GL makefile patch
+- GL dependency
+- GL dependency
+- GL dependency
+- First import to Mandriva
+- imported package daphne
+
+
+* Fri Nov 14 2008 - uli@suse.de
+- update -> 1.0
+* Wed Oct 24 2007 - uli@suse.de
+- no -fPIC for ix86 (breaks asm code)
